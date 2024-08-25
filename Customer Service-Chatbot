@@ -1,0 +1,22 @@
+import random
+responses = {
+ "hello": "Hi there! I am your assitant! How may I help you?",
+ "where is my order":"your order is on the way...Don't Worry!",
+ "what's your refund policy?":"we offer refund and/or exchange within the first 30 days of your purchase!",
+ "shall we change the colour?":"yes!you can.",
+ "do you offer any discount?":"No,now we are not offering any discounts But during festive season we have some offers!",
+ "i have a query":"Don't worry our customer service will help you out.Are you ok?",
+ "yes":"ok",
+ "thank you": "You are welcome! Have a great day.",
+
+}
+def chatbot_response(input_text):
+ input_text = input_text.lower()
+ response = responses.get(input_text, "I don't understand that.You can contact our customer care for further Queries ?")
+ return response
+while True:
+ user_input = input("You: ")
+ if user_input.lower() == "exit":
+    break
+ response = chatbot_response(user_input)
+ print("Chatbot:", response)
